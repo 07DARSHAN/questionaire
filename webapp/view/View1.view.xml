@@ -64,14 +64,14 @@
                             showValueHelp="true"
                             valueHelpRequest="onPasswordValueHelpRequest" />
 
-                        <Button
+                        <!-- <Button
                             id="idbtn"
                             text="SUBMIT"
                             icon="sap-icon://initiative"
                             type="Emphasized"
                             class="sapUiSmalMargin"
                             press="Onclick"
-                            iconFirst="false"/>
+                            iconFirst="false"/> -->
                     </f:content>
                 </f:SimpleForm>
             </FlexBox>
