@@ -1,0 +1,24 @@
+/* Enter your custom styles here */
+.customTitleStyle {
+    color: navy;
+}
+.sapMTitleStyleH2 {
+    font-size: 2rem;
+    color: #538af8;
+}
+.customTitleStyle {
+    color: #003366; /* Light Dark Blue color */
+    font-size: larger; /* Adjust font size as needed */
+}
+.customSkyBlueTitle {
+    color: skyblue;
+    font-size: larger;
+}
+.yourCustomYellowMessage {
+    background-color: yellow !important;
+    border-color: yellow !important;
+    color: black !important; /* Adjust text color as needed */
+}
+
+
+

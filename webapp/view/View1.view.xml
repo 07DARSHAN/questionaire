@@ -1,0 +1,80 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="toolquestionnaire.controller.View1"
+    xmlns="sap.m"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form">
+    <Page showHeader="false">
+        <content>
+            <!-- Title Section -->
+            <FlexBox
+                height="100px"
+                alignItems="Start"
+                justifyContent="Center">
+                <Title
+                    text="Sierra Digital Mutual NDA Submission and Assessment Tool Questionnaire"
+                    textAlign="Center"
+                    titleStyle="H2"
+                    class="customTitleStyle"
+                    style="font-size: larger;"/>
+            </FlexBox>
+
+            <FlexBox
+                justifyContent="Center"
+                alignItems="Center"
+                height="50%"
+                width="100%">
+                <f:SimpleForm
+                    id="idsmpileform"
+                    layout="ResponsiveGridLayout"
+                    editable="false"
+                    width="100%">
+                    <f:content>
+                        <HBox
+                            id="idhbox"
+                            justifyContent="Center">
+                            <Image
+                                id="idimg"
+                                src="https://biz.prlog.org/sierradigitalinc/logo.png"
+                                width="100px"
+                                height="100px" />
+                        </HBox>
+
+                        <Label
+                            id="idlabtxt"
+                            text="" />
+                        <Title
+                            id="idtext"
+                            textAlign="Center"
+                            text="*Please log in"/>
+
+                        <Label text="E-MAIL" />
+                        <Input
+                            id="email"
+                            type="Email"
+                            placeholder="ENTER E-MAIL"
+                            showValueHelp="false"
+                            valueHelpRequest="onValueHelpRequest" />
+                        <Label text="PASSWORD" />
+                        <Input
+                            id="password"
+                            type="Password"
+                            placeholder="ENTER PASSWORD"
+                            valueHelpIconSrc="sap-icon://hide"
+                            showValueHelp="true"
+                            valueHelpRequest="onPasswordValueHelpRequest" />
+
+                        <Button
+                            id="idbtn"
+                            text="SUBMIT"
+                            icon="sap-icon://initiative"
+                            type="Emphasized"
+                            class="sapUiSmalMargin"
+                            press="Onclick"
+                            iconFirst="false"/>
+                    </f:content>
+                </f:SimpleForm>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,110 @@
+<mvc:View controllerName="toolquestionnaire.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" 	xmlns:u="sap.ui.unified" displayBlock="true" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m" >
+
+    <Page class="backgroundPage" showFooter="false" showHeader="false">
+        <content>
+            <!-- Step 1: Center-align title -->
+            <VBox justifyContent="Center" alignItems="Center" >
+                 <Title
+                    text="Sierra Digital Mutual NDA Submission and Assessment Tool Questionnaire"
+                    textAlign="Center"
+                    titleStyle="H2"
+                    class="customTitleStyle"
+                    style="font-size: larger;"/>
+            </VBox>
+
+        <f:SimpleForm
+    id="simpleForm"
+    layout="ResponsiveGridLayout"
+    labelSpanL="3"
+    labelSpanM="3"
+    emptySpanL="4"
+    emptySpanM="4"
+    columnsL="1"
+    columnsM="1"
+    editable="true">
+
+    <!-- Step 2: Question and Radio Buttons -->
+    <VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Start" width="50%" margin="1rem auto">
+        <Label text="Are you willing to provide your SAP BW Production / recent Copy production / Quality System access?" required="true" />
+
+        <RadioButtonGroup id="accessOptions" columns="1" selectedIndex="{/selectedOption}" select="onAccessOptionSelect">
+            <buttons>
+                <RadioButton text="Yes, Current SAP BW Production" />
+                <RadioButton text="Yes, Recent Copy of Production" />
+                <RadioButton text="Yes, Quality System" />
+                <RadioButton text="No" />
+            </buttons>
+        </RadioButtonGroup>
+
+        <!-- Additional Questions based on selection -->
+        <VBox id="bwSystemVersionContainer" visible="false">
+            <Label text="What is your current BW System version?" />
+            <RadioButtonGroup id="bwSystemVersion">
+                <buttons>
+                    <RadioButton text="SAP BW 7.50 (BW on HANA)" />
+                    <RadioButton text="SAP BW4HANA" />
+                    <RadioButton text="SAP BW4HANA 2.0" />
+                    <RadioButton text="SAP BW4HANA 2021" />
+                    <RadioButton text="OTHERS" />
+                </buttons>
+            </RadioButtonGroup>
+            <Input value="" />
+            <VBox id="othersInputContainer" visible="false">
+                <Input id="othersInput" value="" width="90%" />
+            </VBox>
+        </VBox>
+
+        <VBox id="datePickerContainer" visible="false">
+            <Label text="When you would like us to reach to get more information:" />
+            <DatePicker id="datePicker" />
+        </VBox>
+
+        <MessageStrip
+            text="As a prerequisite, you will have to install a DP agent in your system. Once you sign the NDA, you will receive guidance for the prerequisite for BW Assessment."
+            type="Error"
+            showIcon="false"
+            showCloseButton="false"
+            class="sapUiMediumMarginBottom sapUiLargeMarginTop yourCustomYellowMessage" />
+
+        <l:VerticalLayout>
+            <u:FileUploader
+                id="fileUploader"
+                name="myFileUpload"
+                uploadUrl="upload/"
+                tooltip="Upload your file to the local server"
+                uploadComplete="handleUploadComplete"
+                change="handleValueChange"
+                typeMissmatch="handleTypeMissmatch"
+                style="Emphasized"
+                fileType="txt,jpg"
+                placeholder="Choose a file for Upload...">
+                <u:parameters>
+                    <u:FileUploaderParameter
+                        name="Accept-CH"
+                        value="Viewport-Width" />
+                    <u:FileUploaderParameter
+                        name="Accept-CH"
+                        value="Width" />
+                    <u:FileUploaderParameter
+                        name="Accept-CH-Lifetime"
+                        value="86400" />
+                </u:parameters>
+            </u:FileUploader>
+            <Button text="Upload File" press="handleUploadPress"  />
+        </l:VerticalLayout>
+
+        <FlexBox
+            height="100px"
+            alignItems="End"
+            justifyContent="End">
+            <Button text="Submit" press="handleSubmitPress" style="Emphasized" layoutData="{alignment: 'Begin'}" />
+        </FlexBox>
+    </VBox>
+
+</f:SimpleForm>
+
+        </content>
+    </Page>
+</mvc:View>

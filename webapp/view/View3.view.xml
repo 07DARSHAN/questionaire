@@ -1,0 +1,24 @@
+<mvc:View controllerName="toolquestionnaire.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+     <Page class="backgroundPage" showHeader="false">
+        <content>
+            <!-- Step 1: Center-align title -->
+            <VBox justifyContent="Center" alignItems="Center">
+                <Title text="Sierra Digital Mutual NDA Submission and Assessment Tool Questionnaire" textAlign="Center" titleStyle="H2" class="customTitleStyle" />
+            </VBox>
+
+            <!-- Step 2: Center-align text -->
+            <VBox justifyContent="Center" alignItems="Center" class="sapUiSmallMargin">
+                <Text text="We thank you for signing and uploading the NDA document." textAlign="Center" />
+                <Text text="A registered email containing the Pre-requisite steps for the Assessment tool will be sent to you." textAlign="Center" />
+            </VBox>
+
+            <!-- Step 3: Center-align text -->
+            <VBox justifyContent="Center" alignItems="Center" class="sapUiSmallMargin">
+                <Text text="Kindly follow those steps." textAlign="Center" />
+            </VBox>
+        </content>
+    </Page>
+    
+    </mvc:View>
