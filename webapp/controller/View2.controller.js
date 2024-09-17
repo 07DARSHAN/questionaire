@@ -9,7 +9,7 @@ sap.ui.define([
             // Initialization logic goes here
         },
         
-
+// SAM
         onAccessOptionSelect: function (oEvent) {
             var selectedIndex = oEvent.getParameters().selectedIndex;
             var bwSystemVersionContainer = this.getView().byId("bwSystemVersionContainer");
