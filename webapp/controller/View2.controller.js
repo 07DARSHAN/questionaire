@@ -8,7 +8,7 @@ sap.ui.define([
         onInit: function () {
             // Initialization logic goes here
         },
-        // sam
+        
 
         onAccessOptionSelect: function (oEvent) {
             var selectedIndex = oEvent.getParameters().selectedIndex;
