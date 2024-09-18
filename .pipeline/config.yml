@@ -62,4 +62,3 @@ AdditionalTasks:
     parameters:
       method: "email"
       userList: "dev-team@example.com"
-
