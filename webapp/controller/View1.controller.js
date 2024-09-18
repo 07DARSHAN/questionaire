@@ -8,7 +8,7 @@ sap.ui.define([
         onInit: function () {
             // Initialization logic goes here
         },
-
+// sam
         onValueHelpRequest: function() {
             // The logic here is modified to only toggle the input type without changing the icon
             var oEmailInput = this.getView().byId("email");
