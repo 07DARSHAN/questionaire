@@ -1,15 +1,15 @@
 # Comprehensive CI/CD configuration using YAML for a Fiori application on SAP BTP Cloud Foundry
 
 General:
-  cfApiEndpoint: "https://api.cf.<region>.hana.ondemand.com"  # Specify the Cloud Foundry API endpoint
-  cfOrg: "your-organization-name"                             # Specify your Cloud Foundry organization
-  cfSpace: "development"                                      # Specify the Cloud Foundry space
-  cfAppName: "your-app-name"                                  # The name of your application
+  cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"  # Specify the Cloud Foundry API endpoint
+  cfOrg: "94acbf1etrial"                             # Specify your Cloud Foundry organization
+  cfSpace: "dev"                                      # Specify the Cloud Foundry space
+  cfAppName: "toolquestionnaire (1)"                                  # The name of your application
   cfCredentialsId: "deploy-to-cf-credentials"                 # ID for the credentials to use for deployment
 
 Release:
   cloudFoundryDeploy: true                                    # Enable deployment to Cloud Foundry
-  tmsUpload: false                                            # Set to true if using SAP TMS for transport management
+  tmsUpload: true                                            # Set to true if using SAP TMS for transport management
 
 Steps:
   artifactPrepareVersion:
@@ -28,10 +28,10 @@ Steps:
 
   cloudFoundryDeploy:
     mtaDeployParameters: "-f --version-rule ALL"              # MTA deployment parameters (force deploy, version rule)
-    cfDeployTarget: "QA"                                      # Deployment target, can be switched to production for prod deployment
+    cfDeployTarget: "qa"                                      # Deployment target, can be switched to production for prod deployment
 
   tmsUpload:
-    nodeName: "QA"                                            # Node name for TMS if tmsUpload is enabled
+    nodeName: "qa"                                            # Node name for TMS if tmsUpload is enabled
 
   customScript:
     scriptPath: "path/to/your/custom/script.sh"               # Path to your custom script
@@ -40,8 +40,8 @@ Steps:
 
 # Multi-stage deployment configuration
 Stages:
-  QA:
-    cfSpace: "QA"                                             # QA space for testing before production
+  qa:
+    cfSpace: "qa"                                             # QA space for testing before production
     executeSmokeTests: true                                   # Execute smoke tests in QA environment
     approvalRequired: true                                    # Manual approval required before production deployment
 
@@ -61,4 +61,4 @@ AdditionalTasks:
     phase: "endOfPipeline"
     parameters:
       method: "email"
-      userList: "dev-team@example.com"
+      userList: "darshanganesh23@gmail.com"
